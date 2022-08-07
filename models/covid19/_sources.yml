@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: covid19_open_data
+    database: bigquery-public-data
+    schema: covid19_open_data
+    tables: 
+        - name: compatibility_view
