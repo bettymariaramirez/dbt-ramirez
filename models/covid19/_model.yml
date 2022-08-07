@@ -2,16 +2,16 @@ version: 2
 
 models:
   - name: covid_by_city_country_province_state_week
-    tests:
-      - dbt_utils.expression_is_true:
-          expression: "sum_confirmed >= 0"
-      - dbt_utils.expression_is_true:
-          expression: "sum_deaths >= 0"
     description: "country and province with covid19 by week"
     docs:
       show: true
     config:
         sort: week
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "sum_confirmed >= 0"
+      - dbt_utils.expression_is_true:
+          expression: "sum_deaths >= 0"
       
     columns:
       - name: country_region
@@ -22,4 +22,21 @@ models:
         description: "province_state name"
         tests:
           - not_null
-        
+  
+  - name: covid_by_country_week
+    description: "country with covid19 by week"
+    docs:
+      show: true
+    config:
+        sort: week
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "sum_confirmed >= 0"
+      - dbt_utils.expression_is_true:
+          expression: "sum_deaths >= 0"
+    columns:
+      - name: country_region
+        description: "country name"
+        tests:
+          - not_null
+
