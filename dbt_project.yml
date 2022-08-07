@@ -24,10 +24,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-repositories:
-    # Be sure to replace VERSION_NUMBER below!
-    - https://github.com/fishtown-analytics/dbt-utils.git@0.8.6
-
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
